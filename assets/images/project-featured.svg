@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" fill="none">
+  <!-- Clean technical schematic placeholder for featured project -->
+  <rect width="1200" height="675" fill="#EAE5DA"/>
+  
+  <!-- Outer border & grid guidelines -->
+  <rect x="20" y="20" width="1160" height="635" stroke="#161614" stroke-width="1"/>
+  
+  <!-- Window header bar -->
+  <line x1="20" y1="65" x2="1180" y2="65" stroke="#161614" stroke-width="1"/>
+  <text x="40" y="47" font-family="monospace" font-size="12" letter-spacing="1" fill="#161614">PLATE 01 // ARCHITECTURAL SCHEMATIC &amp; RUNTIME BENCHMARK</text>
+  <text x="1160" y="47" font-family="monospace" font-size="11" letter-spacing="1" fill="#5C5B57" text-anchor="end">FIG. 2.4 — 1200 × 675</text>
+  
+  <!-- Left column: mock terminal / inspector -->
+  <line x1="380" y1="65" x2="380" y2="655" stroke="#161614" stroke-width="1"/>
+  
+  <text x="44" y="105" font-family="monospace" font-size="11" fill="#5C5B57">$ cat telemetry.conf</text>
+  <text x="44" y="135" font-family="monospace" font-size="12" fill="#161614">engine.mode = "deterministic"</text>
+  <text x="44" y="160" font-family="monospace" font-size="12" fill="#161614">sync.interval = 16.6ms</text>
+  <text x="44" y="185" font-family="monospace" font-size="12" fill="#161614">cache.strategy = "lru-tiered"</text>
+  <text x="44" y="210" font-family="monospace" font-size="12" fill="#161614">threads.workers = 8</text>
+  
+  <line x1="44" y1="240" x2="356" y2="240" stroke="#161614" stroke-width="0.75" stroke-dasharray="2 2"/>
+  
+  <text x="44" y="275" font-family="monospace" font-size="11" fill="#5C5B57">// MEMORY ALLOCATION PROFILE</text>
+  <rect x="44" y="295" width="312" height="14" fill="#DFD9CD" stroke="#161614" stroke-width="0.75"/>
+  <rect x="44" y="295" width="180" height="14" fill="#161614"/>
+  <text x="44" y="330" font-family="monospace" font-size="11" fill="#161614">HEAP: 24.2 MB / 48.0 MB (50.4%)</text>
+  
+  <!-- Right canvas: architectural blocks & data flows -->
+  <!-- Top telemetry panel -->
+  <rect x="420" y="100" width="720" height="180" stroke="#161614" stroke-width="1" fill="#F4F1EA"/>
+  <line x1="420" y1="135" x2="1140" y2="135" stroke="#161614" stroke-width="1"/>
+  <text x="440" y="123" font-family="monospace" font-size="11" fill="#161614">STREAM INGESTION &amp; BUFFER DISPATCH</text>
+  <text x="1120" y="123" font-family="monospace" font-size="11" fill="#5C5B57" text-anchor="end">STATUS: ACTIVE</text>
+  
+  <!-- Schematic nodes -->
+  <rect x="460" y="165" width="160" height="80" stroke="#161614" stroke-width="1" fill="#EAE5DA"/>
+  <text x="540" y="200" font-family="monospace" font-size="11" fill="#161614" text-anchor="middle">INGEST</text>
+  <text x="540" y="220" font-family="monospace" font-size="10" fill="#5C5B57" text-anchor="middle">ws://source:8080</text>
+  
+  <line x1="620" y1="205" x2="700" y2="205" stroke="#161614" stroke-width="1"/>
+  <polygon points="695,201 705,205 695,209" fill="#161614"/>
+  
+  <rect x="705" y="165" width="160" height="80" stroke="#161614" stroke-width="1" fill="#EAE5DA"/>
+  <text x="785" y="200" font-family="monospace" font-size="11" fill="#161614" text-anchor="middle">TRANSFORM</text>
+  <text x="785" y="220" font-family="monospace" font-size="10" fill="#5C5B57" text-anchor="middle">zero-alloc parser</text>
+  
+  <line x1="865" y1="205" x2="945" y2="205" stroke="#161614" stroke-width="1"/>
+  <polygon points="940,201 950,205 940,209" fill="#161614"/>
+  
+  <rect x="950" y="165" width="160" height="80" stroke="#161614" stroke-width="1" fill="#EAE5DA"/>
+  <text x="1030" y="200" font-family="monospace" font-size="11" fill="#161614" text-anchor="middle">PERSIST</text>
+  <text x="1030" y="220" font-family="monospace" font-size="10" fill="#5C5B57" text-anchor="middle">wal + rocksdb</text>
+  
+  <!-- Waveform / step diagram in bottom section -->
+  <rect x="420" y="310" width="720" height="315" stroke="#161614" stroke-width="1" fill="#F4F1EA"/>
+  <line x1="420" y1="345" x2="1140" y2="345" stroke="#161614" stroke-width="1"/>
+  <text x="440" y="333" font-family="monospace" font-size="11" fill="#161614">LATENCY HISTOGRAM &amp; EVENT SEQUENCING</text>
+  
+  <!-- Grid lines inside graph -->
+  <line x1="440" y1="410" x2="1120" y2="410" stroke="#161614" stroke-width="0.5" stroke-dasharray="3 3"/>
+  <line x1="440" y1="475" x2="1120" y2="475" stroke="#161614" stroke-width="0.5" stroke-dasharray="3 3"/>
+  <line x1="440" y1="540" x2="1120" y2="540" stroke="#161614" stroke-width="0.5" stroke-dasharray="3 3"/>
+  <line x1="440" y1="590" x2="1120" y2="590" stroke="#161614" stroke-width="1"/>
+  
+  <!-- Stepped latency line chart (monochrome clean) -->
+  <polyline points="460,570 510,550 560,560 610,500 660,520 710,430 760,450 810,400 860,420 910,380 960,390 1010,370 1060,365 1100,360"
+            fill="none" stroke="#161614" stroke-width="2"/>
+  
+  <circle cx="710" cy="430" r="4" fill="#161614"/>
+  <circle cx="810" cy="400" r="4" fill="#161614"/>
+  <circle cx="910" cy="380" r="4" fill="#161614"/>
+  <circle cx="1060" cy="365" r="4" fill="#161614"/>
+  
+  <text x="440" y="612" font-family="monospace" font-size="10" fill="#5C5B57">T+000ms</text>
+  <text x="760" y="612" font-family="monospace" font-size="10" fill="#5C5B57">T+120ms (p50: 1.2ms)</text>
+  <text x="1100" y="612" font-family="monospace" font-size="10" fill="#5C5B57" text-anchor="end">T+250ms (p99: 4.8ms)</text>
+</svg>

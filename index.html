@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ====================================================================
+       SEO & METADATA
+       ==================================================================== -->
+  <!-- EDIT: Page title and meta description -->
+  <title>[FIRSTNAME LASTNAME] — Software Engineer &amp; Systems Builder</title>
+  <meta name="description"
+    content="Personal notebook and selected software engineering projects of [FIRSTNAME LASTNAME]. Built with HTML, CSS, and vanilla JS.">
+  <meta name="author" content="[FIRSTNAME LASTNAME]">
+  <meta name="robots" content="index, follow">
+
+  <!-- EDIT: Canonical URL (replace with your published URL) -->
+  <link rel="canonical" href="https://[your-username].github.io/[repo-name]/">
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="[FIRSTNAME LASTNAME] — Software Engineer">
+  <meta property="og:description" content="Selected software engineering projects, technical writing, and background.">
+  <meta property="og:image" content="assets/images/about-placeholder.svg">
+  <meta property="og:url" content="https://[your-username].github.io/[repo-name]/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[FIRSTNAME LASTNAME] — Software Engineer">
+  <meta name="twitter:description" content="Selected software engineering projects, technical writing, and background.">
+  <meta name="twitter:image" content="assets/images/about-placeholder.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#F4F1EA" id="meta-theme-color">
+
+  <!-- ====================================================================
+       PREVENT THEME FLASH (Inline Script Executed Before Render)
+       ==================================================================== -->
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem("theme");
+        const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = savedTheme || (systemPrefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+        const metaTheme = document.getElementById("meta-theme-color");
+        if (metaTheme) {
+          metaTheme.setAttribute("content", theme === "dark" ? "#141413" : "#F4F1EA");
+        }
+      } catch (e) { }
+    })();
+  </script>
+
+  <!-- ====================================================================
+       TYPOGRAPHY: GOOGLE FONTS (Only 2 families: Newsreader + JetBrains Mono)
+       ==================================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ====================================================================
+       SITE HEADER & LIVE TELEMETRY
+       ==================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="page-wrapper header-inner">
+
+      <!-- EDIT: Your name or monogram -->
+      <a href="#top" class="site-title">
+        <span>LEO PONCE</span>
+      </a>
+
+      <!-- "Currently" Status Line -->
+      <!-- EDIT: Location, Local Timezone, and Availability Status -->
+      <div class="status-bar" aria-label="Current status and location">
+        <span class="status-indicator" aria-hidden="true"></span>
+        <span>CAA, LAS PIÑAS CITY</span>
+        <span aria-hidden="true">•</span>
+        <span id="local-time-clock" class="mono">[TIME]</span>
+        <span aria-hidden="true">•</span>
+        <span>STATUS: [UNAVAILABLE]</span>
+      </div>
+
+      <div class="header-actions">
+        <!-- Main Navigation -->
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#work" class="nav-link">Work</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Theme Toggle -->
+        <button type="button" class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle theme mode">
+          Mode: <span class="active-mode">light</span> → dark
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button type="button" class="mobile-nav-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu"
+          aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main-content" role="main">
+
+    <!-- ==================================================================
+         HERO SECTION
+         Left-aligned oversized name and one-sentence statement of what I do.
+         Text links (not pill buttons). No photo here.
+         ================================================================== -->
+    <section class="hero-section page-wrapper" id="top" aria-label="Introduction">
+      <div class="hero-content">
+        <!-- EDIT: Classification tag -->
+        <p class="hero-pretitle">UNDERGRADUATE INFORMATION TECHNOLOGY STUDENT</p>
+
+        <!-- EDIT: Main oversized heading (Only one H1 per page) -->
+        <h1 class="hero-title">LEO JOSHUA ANTHONY M. PONCE</h1>
+
+        <!-- EDIT: One clear sentence of what you do. First-person, no buzzwords. -->
+        <p class="hero-statement">
+          I build <strong>[fault-tolerant distributed backends]</strong> and <strong>[minimal, high-speed
+            interfaces]</strong>. Currently finishing my degree in computer science at [UNIVERSITY NAME] and researching
+          [DATABASE INTERNALS].
+        </p>
+
+        <!-- Plain text links with arrow shifts (Strict anti-slop: NO pill buttons) -->
+        <div class="hero-actions">
+          <a href="#work" class="hero-link">
+            <span>Selected work</span>
+            <span class="arrow-shift" aria-hidden="true">↓</span>
+          </a>
+          <!-- EDIT: Link to your resume PDF or public document -->
+          <a href="[assets/resume.pdf]" class="hero-link secondary" target="_blank" rel="noopener noreferrer">
+            <span>Résumé</span>
+            <span class="arrow-shift" aria-hidden="true">↗</span>
+          </a>
+          <!-- EDIT: Direct email link -->
+          <a href="mailto:ljponce23.2004@gmail.com" class="hero-link secondary">
+            <span>ljponce23.2004@gmail.com</span>
+            <span class="arrow-shift" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         01 — ABOUT
+         Two short paragraphs, a small photo placeholder, and a quick-facts dl
+         ================================================================== -->
+    <section class="section-grid page-wrapper reveal-on-scroll" id="about" aria-labelledby="label-about">
+      <div class="section-label-col">
+        <h2 class="section-label" id="label-about">01 — About</h2>
+      </div>
+
+      <div class="section-content-col">
+        <div class="about-layout">
+
+          <!-- Bio text & Quick Facts -->
+          <div class="about-text">
+            <!-- EDIT: First paragraph: Background & current focus -->
+            <p class="lead">
+              I am a software engineer based in [CITY, STATE]. I focus on [distributed systems, database storage
+              engines, and high-performance web tooling]. Most of my work is written in [Go, Rust, and TypeScript].
+            </p>
+
+            <!-- EDIT: Second paragraph: Philosophy, hobbies, or recent work -->
+            <p>
+              I prefer plain code with minimal dependencies, predictable memory profiles, and unambiguous failure modes.
+              When I am not debugging network protocols or profiling memory allocations, I write technical notes, repair
+              mechanical keyboards, and read twentieth-century architectural theory.
+            </p>
+
+            <!-- Quick-facts list in a two-column definition-list style -->
+            <!-- EDIT: Update the four core factual attributes below -->
+            <dl class="quick-facts-dl">
+              <div class="fact-item">
+                <dt>Location</dt>
+                <dd>[SAN FRANCISCO, CA (PST / UTC-8)]</dd>
+              </div>
+              <div class="fact-item">
+                <dt>Education</dt>
+                <dd>[B.S. IN COMPUTER SCIENCE, UNIVERSITY NAME, 2026]</dd>
+              </div>
+              <div class="fact-item">
+                <dt>Focus</dt>
+                <dd>[DISTRIBUTED STORAGE &amp; WEB PROTOCOLS]</dd>
+              </div>
+              <div class="fact-item">
+                <dt>Availability</dt>
+                <dd>[OPEN FOR SELECT ROLES (STARTING Q3 2026)]</dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Small photo figure (Square/2px corners, 1px border, no shadow) -->
+          <aside class="about-aside" aria-label="Author portrait">
+            <figure class="portrait-figure">
+              <!-- EDIT: Replace src with your photo (e.g., assets/images/portrait.jpg) -->
+              <img src="assets/images/about-placeholder.svg"
+                alt="Portrait photograph placeholder for [FIRSTNAME LASTNAME]" class="portrait-img" width="600"
+                height="750" loading="lazy">
+              <figcaption class="portrait-caption">
+                FIG. 01 // [PORTRAIT CAPTION / ARCHIVAL PRINT]
+              </figcaption>
+            </figure>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         02 — SKILLS
+         Plain grouped mono lists (Languages, Frameworks, Tools, Concepts).
+         Comma or slash separated. No chips, no bars, no percentages.
+         ================================================================== -->
+    <section class="section-grid page-wrapper reveal-on-scroll" id="skills" aria-labelledby="label-skills">
+      <div class="section-label-col">
+        <h2 class="section-label" id="label-skills">02 — Skills</h2>
+      </div>
+
+      <div class="section-content-col">
+        <div class="skills-grid">
+
+          <!-- Skill Group 1: Languages -->
+          <!-- EDIT: Update language list -->
+          <!-- Copy this block to add another -->
+          <div class="skill-group">
+            <h3 class="skill-category">02.1 / Languages</h3>
+            <p class="skill-list">[Go, Rust, TypeScript, Python, C99, SQL, HTML5 / CSS3]</p>
+            <p class="skill-desc">Daily production languages with strict typing and static analysis tooling.</p>
+          </div>
+
+          <!-- Skill Group 2: Systems & Frameworks -->
+          <!-- EDIT: Update systems / frameworks list -->
+          <!-- Copy this block to add another -->
+          <div class="skill-group">
+            <h3 class="skill-category">02.2 / Systems &amp; Runtimes</h3>
+            <p class="skill-list">[Node.js, Tokio, React, PostgreSQL, Redis, SQLite, gRPC / Protocol Buffers]</p>
+            <p class="skill-desc">Async runtimes, streaming interfaces, and relational persistence.</p>
+          </div>
+
+          <!-- Skill Group 3: Infrastructure & Tools -->
+          <!-- EDIT: Update tooling list -->
+          <!-- Copy this block to add another -->
+          <div class="skill-group">
+            <h3 class="skill-category">02.3 / Infrastructure &amp; Tools</h3>
+            <p class="skill-list">[Linux, Docker, Git, eBPF, Valgrind, pprof, Terraform, GitHub Actions]</p>
+            <p class="skill-desc">Benchmarking, profiling, containerization, and reproducible builds.</p>
+          </div>
+
+          <!-- Skill Group 4: Theoretical & Architectural Concepts -->
+          <!-- EDIT: Update concepts list -->
+          <!-- Copy this block to add another -->
+          <div class="skill-group">
+            <h3 class="skill-category">02.4 / Core Concepts</h3>
+            <p class="skill-list">[Raft Consensus, LSM Trees, Memory Allocators, Cache Invalidation, Distributed
+              Tracing]</p>
+            <p class="skill-desc">Algorithmic foundations, concurrency primitives, and storage hierarchies.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         03 — WORK (PROJECTS)
+         1 Featured project with larger schematic image + indexed table/list
+         (number, title, one-line blurb, stack, year, arrow links).
+         ================================================================== -->
+    <section class="section-grid page-wrapper reveal-on-scroll" id="work" aria-labelledby="label-work">
+      <div class="section-label-col">
+        <h2 class="section-label" id="label-work">03 — Selected Work</h2>
+      </div>
+
+      <div class="section-content-col">
+
+        <!-- FEATURED PROJECT PLATE -->
+        <!-- EDIT: Update featured project details, schematic image, and links -->
+        <article class="featured-project" aria-labelledby="featured-project-title">
+          <div class="featured-header">
+            <span>[PROJECT 01 // FLAGSHIP ARCHITECTURE]</span>
+            <span>STATUS: [PRODUCTION BENCHMARK]</span>
+          </div>
+
+          <div class="featured-image-wrapper">
+            <!-- EDIT: Replace src with screenshot or architectural schematic -->
+            <img src="assets/images/project-featured.svg"
+              alt="Architectural diagram and telemetry graph for [PROJECT ONE NAME]" class="featured-img" width="1200"
+              height="675" loading="lazy">
+          </div>
+
+          <div class="featured-body">
+            <div>
+              <h3 class="featured-title" id="featured-project-title">[PROJECT ONE: TELSTAR STORAGE ENGINE]</h3>
+              <p class="featured-desc">
+                [An append-only, log-structured merge-tree storage engine written in Go with deterministic write-ahead
+                logging and zero-allocation binary frame parsing.] Designed to sustain 140k writes per second on
+                commodity hardware with p99 tail latency under 4 milliseconds.
+              </p>
+            </div>
+
+            <div class="featured-meta">
+              <div>
+                <div class="meta-block-label">Stack</div>
+                <div class="meta-block-val">[Go, RocksDB, gRPC, Linux]</div>
+              </div>
+              <div>
+                <div class="meta-block-label">Year</div>
+                <div class="meta-block-val">[2026]</div>
+              </div>
+              <div class="featured-links">
+                <a href="https://[github.com/yourname/project-one]" target="_blank" rel="noopener noreferrer">
+                  <span>Source</span>
+                  <span class="arrow-shift" aria-hidden="true">↗</span>
+                </a>
+                <a href="https://[project-one-live-demo.example.com]" target="_blank" rel="noopener noreferrer">
+                  <span>Live demo</span>
+                  <span class="arrow-shift" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- INDEXED PROJECT LIST / TABLE -->
+        <!-- Each entry: number, title, description, stack, year, links (Live, Source) -->
+        <div class="projects-table" role="table" aria-label="Indexed list of selected projects">
+
+          <!-- PROJECT ROW 02 -->
+          <!-- EDIT: Project 02 details -->
+          <!-- Copy this block to add another -->
+          <div class="project-row" role="row">
+            <span class="proj-num" role="cell">02</span>
+            <div role="cell">
+              <h3 class="proj-title">[KRONOS SCHEDULER]</h3>
+            </div>
+            <p class="proj-desc" role="cell">
+              [Lightweight task orchestrator with cron grammar parsing and monotonic clock drift compensation.]
+            </p>
+            <span class="proj-stack" role="cell">[Rust / Tokio]</span>
+            <span class="proj-year" role="cell">[2025]</span>
+            <div class="proj-links" role="cell">
+              <a href="https://[github.com/yourname/kronos]" target="_blank" rel="noopener noreferrer"
+                aria-label="View Kronos source code">
+                <span>Code</span>
+                <span class="arrow-shift" aria-hidden="true">↗</span>
+              </a>
+              <a href="https://[kronos.example.com]" target="_blank" rel="noopener noreferrer"
+                aria-label="Open Kronos documentation">
+                <span>Doc</span>
+                <span class="arrow-shift" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- PROJECT ROW 03 -->
+          <!-- EDIT: Project 03 details -->
+          <!-- Copy this block to add another -->
+          <div class="project-row" role="row">
+            <span class="proj-num" role="cell">03</span>
+            <div role="cell">
+              <h3 class="proj-title">[VECTORIAL DIFF ENGINE]</h3>
+            </div>
+            <p class="proj-desc" role="cell">
+              [WASM-compiled Myers diff algorithm implementation optimized for structured AST node comparisons.]
+            </p>
+            <span class="proj-stack" role="cell">[TypeScript / Rust WASM]</span>
+            <span class="proj-year" role="cell">[2025]</span>
+            <div class="proj-links" role="cell">
+              <a href="https://[github.com/yourname/vectorial-diff]" target="_blank" rel="noopener noreferrer"
+                aria-label="View Vectorial Diff source">
+                <span>Code</span>
+                <span class="arrow-shift" aria-hidden="true">↗</span>
+              </a>
+              <a href="https://[vectorial.example.com]" target="_blank" rel="noopener noreferrer"
+                aria-label="View Vectorial Diff demo">
+                <span>Live</span>
+                <span class="arrow-shift" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- PROJECT ROW 04 -->
+          <!-- EDIT: Project 04 details -->
+          <!-- Copy this block to add another -->
+          <div class="project-row" role="row">
+            <span class="proj-num" role="cell">04</span>
+            <div role="cell">
+              <h3 class="proj-title">[ATELIER NOTEBOOK CLI]</h3>
+            </div>
+            <p class="proj-desc" role="cell">
+              [Local-first Markdown knowledge base indexing markdown files via SQLite FTS5 with sub-10ms queries.]
+            </p>
+            <span class="proj-stack" role="cell">[Go / SQLite FTS5]</span>
+            <span class="proj-year" role="cell">[2024]</span>
+            <div class="proj-links" role="cell">
+              <a href="https://[github.com/yourname/atelier-cli]" target="_blank" rel="noopener noreferrer"
+                aria-label="View Atelier CLI source">
+                <span>Code</span>
+                <span class="arrow-shift" aria-hidden="true">↗</span>
+              </a>
+              <a href="https://[atelier.example.com]" target="_blank" rel="noopener noreferrer"
+                aria-label="View Atelier release">
+                <span>Pkg</span>
+                <span class="arrow-shift" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         04 — EXPERIENCE & EDUCATION
+         Simple two-column timeline (dates in mono left, role/org/bullets right).
+         Strict anti-slop: No dots-and-line timeline widgets!
+         ================================================================== -->
+    <section class="section-grid page-wrapper reveal-on-scroll" id="experience" aria-labelledby="label-experience">
+      <div class="section-label-col">
+        <h2 class="section-label" id="label-experience">04 — Experience</h2>
+      </div>
+
+      <div class="section-content-col">
+        <div class="timeline-list">
+
+          <!-- TIMELINE ENTRY 01 -->
+          <!-- EDIT: Experience Entry 1 -->
+          <!-- Copy this block to add another -->
+          <article class="timeline-entry">
+            <time class="timeline-period">[JUN 2025 — AUG 2025]</time>
+            <div class="timeline-content">
+              <header class="timeline-header">
+                <h3 class="timeline-role">[SYSTEMS ENGINEERING INTERN]</h3>
+                <span class="timeline-org">[ORGANIZATION / COMPANY NAME]</span>
+              </header>
+              <ul class="timeline-bullets">
+                <li>[Rewrote telemetry ingestion pipeline in Go, reducing CPU overhead by 34% across 80 nodes.]</li>
+                <li>[Implemented backpressure flow control using leaky-bucket rate limiters over gRPC streams.]</li>
+                <li>[Authored internal technical documentation and benchmark harnesses for multi-region failover tests.]
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- TIMELINE ENTRY 02 -->
+          <!-- EDIT: Experience Entry 2 -->
+          <!-- Copy this block to add another -->
+          <article class="timeline-entry">
+            <time class="timeline-period">[SEP 2024 — MAY 2025]</time>
+            <div class="timeline-content">
+              <header class="timeline-header">
+                <h3 class="timeline-role">[UNDERGRADUATE RESEARCH ASSISTANT]</h3>
+                <span class="timeline-org">[SYSTEMS LAB, UNIVERSITY NAME]</span>
+              </header>
+              <ul class="timeline-bullets">
+                <li>[Benchmarked cache-friendly B-Tree indexes versus LSM structures under concurrent read-heavy
+                  workloads.]</li>
+                <li>[Instrumented kernel-level memory allocations using eBPF probes on Linux 6.8.]</li>
+                <li>[Co-authored workshop paper on deterministic replay for distributed event streams.]</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- TIMELINE ENTRY 03 (Education) -->
+          <!-- EDIT: Education Entry 3 -->
+          <!-- Copy this block to add another -->
+          <article class="timeline-entry">
+            <time class="timeline-period">[2022 — 2026 EXPECTED]</time>
+            <div class="timeline-content">
+              <header class="timeline-header">
+                <h3 class="timeline-role">[B.S. IN COMPUTER SCIENCE]</h3>
+                <span class="timeline-org">[UNIVERSITY NAME, DEPARTMENT OF CS]</span>
+              </header>
+              <ul class="timeline-bullets">
+                <li>[Relevant Coursework: Distributed Systems, Operating Systems, Compilers, Database Architecture.]
+                </li>
+                <li>[Teaching Assistant for CS 201: Data Structures &amp; Algorithm Analysis (Fall 2024).]</li>
+                <li>[Dean's Honors List for academic distinction across 6 consecutive terms.]</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         05 — CONTACT
+         One large line of text with email as link, plus short list of social links.
+         No form backend.
+         ================================================================== -->
+    <section class="section-grid page-wrapper reveal-on-scroll" id="contact" aria-labelledby="label-contact">
+      <div class="section-label-col">
+        <h2 class="section-label" id="label-contact">05 — Contact</h2>
+      </div>
+
+      <div class="section-content-col">
+        <div class="contact-callout">
+          <p class="contact-pre">Direct Inquiries &amp; Collaboration</p>
+          <!-- EDIT: Your primary contact email -->
+          <a href="mailto:[YOUR.EMAIL@EXAMPLE.COM]" class="contact-email-link">
+            [YOUR.EMAIL@EXAMPLE.COM]
+          </a>
+        </div>
+
+        <!-- Short text list of external social/code links -->
+        <!-- EDIT: Update URLs and handles below -->
+        <div class="contact-channels" aria-label="Social and code repository links">
+          <a href="https://[github.com/yourusername]" class="channel-link" target="_blank" rel="noopener noreferrer">
+            <span>GitHub</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="https://[linkedin.com/in/yourusername]" class="channel-link" target="_blank"
+            rel="noopener noreferrer">
+            <span>LinkedIn</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="https://[x.com/yourusername]" class="channel-link" target="_blank" rel="noopener noreferrer">
+            <span>X (Twitter)</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="[assets/resume.pdf]" class="channel-link" target="_blank" rel="noopener noreferrer">
+            <span>Résumé (PDF)</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="https://[yourblog.com]" class="channel-link" target="_blank" rel="noopener noreferrer">
+            <span>Technical Notes</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       FOOTER
+       Small mono line with auto-updating year, "Back to top ↑"
+       ==================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="page-wrapper footer-inner">
+      <div class="footer-meta">
+        <span>© <span id="current-year">2026</span> [FIRSTNAME LASTNAME]</span>
+        <span>•</span>
+        <span>TYPESET IN NEWSREADER &amp; JETBRAINS MONO</span>
+        <span>•</span>
+        <span>ZERO BUNDLERS / STATIC HTML</span>
+      </div>
+      <div>
+        <a href="#top" class="back-to-top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

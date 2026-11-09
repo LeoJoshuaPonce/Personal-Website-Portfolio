@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="600" height="750" fill="none">
+  <!-- Editorial Monochrome Portrait Placeholder -->
+  <rect width="600" height="750" fill="#EAE5DA"/>
+  <rect x="24" y="24" width="552" height="702" stroke="#161614" stroke-width="1" stroke-dasharray="4 4"/>
+  
+  <!-- Subtle architectural framing lines -->
+  <line x1="300" y1="24" x2="300" y2="726" stroke="#161614" stroke-width="0.75" stroke-opacity="0.3"/>
+  <line x1="24" y1="375" x2="576" y2="375" stroke="#161614" stroke-width="0.75" stroke-opacity="0.3"/>
+  
+  <!-- Stylized geometric portrait silhouette / editorial emblem -->
+  <circle cx="300" cy="270" r="95" stroke="#161614" stroke-width="1.5" fill="#DFD9CD"/>
+  <path d="M190 530 C 190 415, 410 415, 410 530 Z" stroke="#161614" stroke-width="1.5" fill="#DFD9CD"/>
+  
+  <line x1="260" y1="270" x2="340" y2="270" stroke="#161614" stroke-width="1"/>
+  
+  <!-- Monospace technical metadata tags -->
+  <text x="44" y="58" font-family="monospace" font-size="11" letter-spacing="1.5" fill="#5C5B57">[FIG. 01 — PORTRAIT PLACEHOLDER]</text>
+  <text x="44" y="694" font-family="monospace" font-size="11" letter-spacing="1" fill="#5C5B57">RATIO 4:5 • REPLACE WITH assets/images/portrait.jpg</text>
+  <text x="556" y="694" font-family="monospace" font-size="11" letter-spacing="1" fill="#5C5B57" text-anchor="end">600 × 750 PX</text>
+</svg>
